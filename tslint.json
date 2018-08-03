@@ -2,6 +2,7 @@
   "extends": ["tslint:recommended", "tslint-react"],
   "rules": {
     "member-access": [true, "no-public"],
+    "jsx-no-lambda": false,
     "typedef": [
       true,
       "call-signature",

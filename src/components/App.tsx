@@ -3,12 +3,12 @@ import * as React from "react";
 class App extends React.Component {
 
     clickHandler(): void {
-        console.log('123');
+        console.log('Invoke clickHandler');
     }
 
     render(): JSX.Element {
         return (
-            <div onClick={this.clickHandler}>
+            <div onClick={() => this.clickHandler()}>
                 <h1>My React App!</h1>
             </div>
         );
