@@ -2,13 +2,13 @@ import * as React from "react";
 
 class App extends React.Component {
 
-    clickHandler(): void {
-        console.log('Invoke clickHandler');
+    clickHandler(data: string): void {
+        const msg: string = data;
     }
 
     render(): JSX.Element {
         return (
-            <div onClick={() => this.clickHandler()}>
+            <div onClick={() => this.clickHandler("Invoke clickHandler")}>
                 <h1>My React App!</h1>
             </div>
         );
