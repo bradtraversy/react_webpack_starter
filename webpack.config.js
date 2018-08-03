@@ -45,6 +45,17 @@ module.exports = {
                         name: "fonts/[name].[ext]",
                     },
                 },
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg|ico)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'assets/'
+                        }
+                    }
+                ]
             }
         ]
     },
