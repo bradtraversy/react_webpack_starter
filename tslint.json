@@ -1,0 +1,14 @@
+{
+  "extends": ["tslint:recommended", "tslint-react"],
+  "rules": {
+    "member-access": [true, "no-public"],
+    "typedef": [
+      true,
+      "call-signature",
+      "parameter",
+      "property-declaration",
+      "variable-declaration",
+      "member-variable-declaration"
+    ]
+  }
+}
