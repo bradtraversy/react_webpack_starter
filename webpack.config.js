@@ -7,6 +7,10 @@ const config = {
     srcPath: path.join(__dirname, 'src')
 };
 
+function srcPathExtend(subpath) {
+    return path.join(config.srcPath, subpath)
+}
+
 module.exports = {
     entry: './src/index.tsx',
     output: {
@@ -17,7 +21,7 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -68,7 +72,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin([config.distPath], {verbose: true}),
         new HtmlWebpackPlugin({
-            template: './src/index.html'
-        }),
+            template: srcPathExtend('index.html')
+        })
     ]
 };
