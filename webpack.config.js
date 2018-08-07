@@ -1,10 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
+const config = {
+    distPath: path.join(__dirname, 'dist'),
+    srcPath: path.join(__dirname, 'src')
+};
 
 module.exports = {
     entry: './src/index.tsx',
     output: {
-        path: path.join(__dirname, '/dist'),
+        path: config.distPath,
         filename: 'index_bundle.js',
         sourceMapFilename: 'index_bundle.map'
     },
@@ -60,8 +66,9 @@ module.exports = {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin([config.distPath], {verbose: true}),
         new HtmlWebpackPlugin({
             template: './src/index.html'
-        })
+        }),
     ]
 };
