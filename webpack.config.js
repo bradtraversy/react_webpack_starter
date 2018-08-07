@@ -46,7 +46,10 @@ const config = {
                     {
                         loader: "postcss-loader",
                         options: {
-                            plugins: [require('autoprefixer')()]
+                            plugins: [
+                                require('postcss-import')(),
+                                require('autoprefixer')()
+                            ]
                         }
                     }
                 ]
