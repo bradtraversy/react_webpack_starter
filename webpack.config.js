@@ -17,7 +17,7 @@ module.exports = (env, options) => {
     return {
         devtool: isDevMode ? "source-map" : false,
         resolve: {
-            extensions: [".ts", ".tsx", ".js", ".jsx"],
+            extensions: [".ts", ".tsx", ".js"],
         },
         module: {
             rules: [
