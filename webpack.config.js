@@ -2,26 +2,25 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const config = {
+const settings = {
     distPath: path.join(__dirname, 'dist'),
     srcPath: path.join(__dirname, 'src')
 };
 
 function srcPathExtend(subpath) {
-    return path.join(config.srcPath, subpath)
+    return path.join(settings.srcPath, subpath)
 }
 
-module.exports = {
-    entry: './src/index.tsx',
+const config = {
+    entry:  srcPathExtend('index.tsx'),
     output: {
-        path: config.distPath,
+        path: settings.distPath,
         filename: 'index_bundle.js',
         sourceMapFilename: 'index_bundle.map'
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
-    devtool: 'source-map',
     module: {
         rules: [
             {
@@ -32,7 +31,12 @@ module.exports = {
                 test: /\.scss$/,
                 use: [
                     "style-loader",
-                    "css-loader",
+                    {
+                        loader: "css-loader",
+                        options: {
+                            sourceMap: true
+                        }
+                    },
                     {
                         loader: "sass-loader",
                         options: {
@@ -70,9 +74,21 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin([config.distPath], {verbose: true}),
+        new CleanWebpackPlugin([settings.distPath], {
+            verbose: true
+        }),
         new HtmlWebpackPlugin({
             template: srcPathExtend('index.html')
         })
     ]
+};
+
+module.exports = (env, options) => {
+    config.mode = options.mode;
+
+    if (options.mode === 'development') {
+        config.devtool = 'source-map';
+    }
+
+    return config;
 };
