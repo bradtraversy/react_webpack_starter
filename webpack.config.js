@@ -38,18 +38,18 @@ const config = {
                         }
                     },
                     {
-                        loader: "sass-loader",
+                        loader: "postcss-loader",
                         options: {
+                            plugins: [
+                                require('autoprefixer')()
+                            ],
                             sourceMap: true
                         }
                     },
                     {
-                        loader: "postcss-loader",
+                        loader: "sass-loader",
                         options: {
-                            plugins: [
-                                require('postcss-import')(),
-                                require('autoprefixer')()
-                            ]
+                            sourceMap: true
                         }
                     }
                 ]
