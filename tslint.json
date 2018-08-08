@@ -2,6 +2,8 @@
   "extends": ["tslint:recommended", "tslint-react"],
   "rules": {
     "member-access": [true, "no-public"],
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
     "jsx-no-lambda": false,
     "typedef": [
       true,

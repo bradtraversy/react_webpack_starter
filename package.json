@@ -1,21 +1,25 @@
 {
-  "name": "react_webpack_starter",
+  "name": "EmulateBio",
   "version": "1.0.0",
-  "description": "Boilerplate for React apps",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "./node_modules/.bin/webpack --mode production"
   },
-  "author": "Brad Traversy & Vladimir Paziuk",
+  "author": "Vladimir Paziuk",
   "license": "MIT",
   "dependencies": {
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
   },
   "devDependencies": {
     "@types/react": "^16.4.7",
     "@types/react-dom": "^16.0.6",
+    "@types/react-redux": "^6.0.6",
+    "@types/redux": "^3.6.0",
     "autoprefixer": "^9.0.2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
