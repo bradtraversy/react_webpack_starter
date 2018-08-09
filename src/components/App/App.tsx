@@ -2,7 +2,6 @@ import * as React from "react";
 import { IApp } from "./index";
 
 class App extends React.Component<IApp, {}> {
-
     componentDidMount(): void {
         this.props.fetchData();
     }

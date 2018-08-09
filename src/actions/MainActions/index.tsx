@@ -1,12 +1,21 @@
-import { startFetchingData, fetchDataSuccess, fetchDataError } from "./MainCreators";
-import { ICommonAction } from "../../interfaces/IReducers";
+import { FETCH_DATA } from "./MainTypes";
+import { START, SUCCESS, ERROR } from "../commonActionTypes";
+import { IActionCreator } from "../../interfaces/IReducers";
 
-export const fetchData: ICommonAction = () => (dispatch) => {
-    dispatch(startFetchingData());
+export const startFetchingData: IActionCreator = () => ({
+    type: FETCH_DATA + START,
+});
 
-    setTimeout(() => {
-        dispatch(fetchDataSuccess(["test"]));
-    }, 2000);
+export const fetchDataSuccess: IActionCreator<string[]> = (payload) => ({
+    type: FETCH_DATA + SUCCESS,
+    payload,
+});
 
-    // dispatch(fetchDataError());
-};
+export const fetchDataError: IActionCreator<string> = (payload) => ({
+    type: FETCH_DATA + ERROR,
+    payload,
+});
+
+export const fetchData: IActionCreator = () => ({
+    type: FETCH_DATA,
+});
