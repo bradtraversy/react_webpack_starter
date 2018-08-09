@@ -11,11 +11,16 @@
   "license": "MIT",
   "dependencies": {
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0"
   },
   "devDependencies": {
     "@types/react": "^16.4.7",
     "@types/react-dom": "^16.0.6",
+    "@types/react-redux": "^6.0.6",
+    "@types/redux": "^3.6.0",
     "autoprefixer": "^9.0.2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
