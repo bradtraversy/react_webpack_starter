@@ -4,9 +4,9 @@ import { compose } from "redux";
 import { IGlobalStore } from "../../reducers/index";
 import { IActionCreator } from "../../interfaces/IReducers";
 
-import { fetchData } from "../../actions/MainActions";
+import { fetchData } from "../../actions/MainActions/index";
 
-import App from "./App";
+import FrontPage from "./FrontPage";
 
 // interface IOwnProps {}
 
@@ -17,8 +17,8 @@ interface IDispatchProps {
     fetchData: IActionCreator;
 }
 
-export type IApp = IStateProps & IDispatchProps;
-// export type IApp = IStateProps & IDispatchProps & IOwnProps;
+export type IFrontPage = IStateProps & IDispatchProps;
+// export type IFrontPage = IStateProps & IDispatchProps & IOwnProps;
 
 const mapStateToProps: MapStateToProps<IStateProps, {}, IGlobalStore> = ({main}) => ({
     data: main.data,
@@ -30,4 +30,4 @@ const mapDispatchToProps: MapDispatchToProps<IDispatchProps, {}> = {
 
 export default compose(
     connect(mapStateToProps, mapDispatchToProps),
-)(App);
+)(FrontPage);
