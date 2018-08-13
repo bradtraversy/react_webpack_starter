@@ -12,6 +12,50 @@
       "property-declaration",
       "variable-declaration",
       "member-variable-declaration"
-    ]
+    ],
+    "max-file-line-count": [
+      true,
+      400
+    ],
+    "max-line-length": [
+      true,
+      120
+    ],
+    "interface-name": [
+      true,
+      "always-prefix"
+    ],
+    "prefer-const": true,
+    "comment-format": [
+      true,
+      "check-space"
+    ],
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-whitespace",
+      "check-catch",
+      "check-else",
+      "check-finally"
+    ],
+    "whitespace": [
+      true,
+      "check-decl",
+      "check-operator",
+      "check-separator",
+      "check-type",
+      "check-module"
+    ],
+    "no-console": [
+      true,
+      "log",
+      "debug",
+      "info",
+      "time",
+      "timeEnd",
+      "trace"
+    ],
+    "no-debugger": true,
+    "no-duplicate-imports": true
   }
 }
