@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
+    "test:tslint": "./node_modules/.bin/tslint -c ./tslint.json './src/**/*.{tsx,ts}'",
     "build": "./node_modules/.bin/webpack --mode production"
   },
   "author": "Brad Traversy & Vladimir Paziuk",
